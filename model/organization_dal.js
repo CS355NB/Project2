@@ -5,16 +5,16 @@ var db  = require('./db_connection.js');
 var connection = mysql.createConnection(db.config);
 
 exports.getAll = function(callback) {
-    var query = 'SELECT * FROM Customer;';
+    var query = 'SELECT * FROM Organization;';
 
     connection.query(query, function(err, result) {
         callback(err, result);
     });
 };
 
-exports.getById = function(ssn, callback) {
-    var query = 'SELECT * FROM Customer WHERE ssn = ?';
-    var queryData = [account_id];
+exports.getById = function(organization_id, callback) {
+    var query = 'SELECT * FROM Organization WHERE organization_id = ?';
+    var queryData = [organization_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -22,11 +22,11 @@ exports.getById = function(ssn, callback) {
 };
 
 exports.insert = function(params, callback) {
-    var query = 'INSERT INTO Customer (ssn, customer_fname, customer_lname, customer_address) VALUES (?, ?, ?, ?)';
+    var query = 'INSERT INTO Organization (organization_name, organization_address) VALUES (?, ?)';
 
     // the question marks in the sql query above will be replaced by the values of the
     // the data in queryData
-    var queryData = [params.ssn, params.customer_fname, params.customer_lname, params.customer_address];
+    var queryData = [params.organization_name, params.organization_address];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -34,9 +34,9 @@ exports.insert = function(params, callback) {
 
 }
 
-exports.delete = function(account_id, callback) {
-    var query = 'DELETE FROM Customer WHERE ssn = ?';
-    var queryData = [account_id];
+exports.delete = function(organization_id, callback) {
+    var query = 'DELETE FROM Organization WHERE organization_id = ?';
+    var queryData = [organization_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

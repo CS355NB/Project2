@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Add New Pet</title>
+    </head>
+    <body>
+        <h1>Add New Pet</h1>
+        <form action="/pet/insert" method="get">
+            Pet Name: <input id="pet_name" name="pet_name" type="text" />
+            <br />
+            <br />
+            Animal Type: <input id="animal_type" name="animal_type" type="text" />
+            <br />
+            <br />
+            Pet Age: <input id="age" name="age" type="text" />
+            <br />
+            <br />
+            Pet Gender: <input id="gender" name="gender" type="text" />
+            <br />
+            <br />
+            Pet Description: <input id="pet_description" name="pet_description" type="text" />
+            <br />
+            <br />
+            Date Of When Pet Was Brought In: <input id="broughtin_date" name="broughtin_date" type="text" />
+            <br />
+            <br />
+            Organization Name
+            <select id="organization_id" name="organization_id">
+                <% for(var i=0; organization.length > i; i++ ) { %>
+                <option value="<%= organization[i].organization_id %>"><%= organization[i].organization_name %></option>
+                <% } %>
+            </select>
+            <br/>
+            <br/>
+            If Adopted: Date Of When Pet Was Adopted: <input id="adopted_date" name="adopted_date" type="text" />
+            <br />
+            <br />
+            If Adopted: Name Of Owner
+            <select id="ssn" name="ssn">
+                <% for(var i=0; customer.length > i; i++ ) { %>
+                    <option value="<%= customer[i].ssn %>"><%= customer[i].customer_lname + ', ' + customer[i].customer_lname %></option>
+                <% } %>
+            </select>
+
+            <input type="submit" />
+
+        </form>
+    </body>
+</html>

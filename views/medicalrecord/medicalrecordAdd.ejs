@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Add New Medical Record</title>
+    </head>
+    <body>
+        <h1>Add New Medical Record</h1>
+        <form action="/medicalrecord/insert" method="get">
+            Pet Name
+            <select id="pet_id" name="pet_id">
+                <% for(var i=0; pet.length > i; i++ ) { %>
+                <option value="<%= pet[i].pet_id %>"><%= pet[i].pet_name %></option>
+                <% } %>
+            </select>
+            <br/>
+            <br/>
+            Check Up ID: <input id="checkup_id" name="checkup_id" type="text" />
+            <br />
+            <br />
+            Worms
+            <select true="true" false="false">
+                <option value="selected">true</option>
+                <option>false</option>
+            </select>
+            <br/>
+            <br/>
+            Fleas
+            <select true="true" false="false">
+                <option value="selected">true</option>
+                <option>false</option>
+            </select>
+            <br/>
+            <br/>
+            Cancer
+            <select true="true" false="false">
+                <option value="selected">true</option>
+                <option>false</option>
+            </select>
+            <br/>
+            <br/>
+            Check Up Description: <input id="checkup_description" name="checkup_description" type="text" />
+            <br />
+            <br />
+
+            <input type="submit" />
+
+        </form>
+    </body>
+</html>

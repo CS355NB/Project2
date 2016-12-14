@@ -22,11 +22,11 @@ exports.getById = function(pet_id, checkup_id, callback) {
 };
 
 exports.insert = function(params, callback) {
-    var query = 'INSERT INTO Account (first_name, last_name, email) VALUES (?, ?, ?)';
+    var query = 'INSERT INTO Vet_Check_Up (pet_id, checkup_id, checkup_date, shots_uptodate, worms, fleas, cancer, checkup_description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
 
     // the question marks in the sql query above will be replaced by the values of the
     // the data in queryData
-    var queryData = [params.first_name, params.last_name, params.email];
+    var queryData = [params.pet_id, params.checkup_id, params.checkup_date, params.shots_uptodate, params.worms, params.fleas, params.cancer, params.checkup_description];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -34,9 +34,9 @@ exports.insert = function(params, callback) {
 
 }
 
-exports.delete = function(account_id, callback) {
-    var query = 'DELETE FROM Account WHERE account_id = ?';
-    var queryData = [account_id];
+exports.delete = function(pet_id, checkup_id, callback) {
+    var query = 'DELETE FROM Vet_Check_Up WHERE pet_id = ? AND checkup_id = ?';
+    var queryData = [pet_id, checkup_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
