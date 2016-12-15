@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Customers</title>
+    </head>
+    <body>
+        <h1>Customers</h1>
+        <a href="/customer/add">Add New Customer</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Name</th><th>Address</th><th>Action</th></tr>
+                <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/customer/?ssn=<%= result[i].ssn %>"><%= result[i].customer_lname %>, <%= result[i].customer_fname %></a></td>
+                <td><%= result[i].customer_address %></td>
+                <td><form action="/customer/delete/">
+                        <input type="hidden" name="ssn" id="ssn" value="<%= result[i].ssn %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

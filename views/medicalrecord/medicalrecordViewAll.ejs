@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Medical Records</title>
+    </head>
+    <body>
+        <h1>Medical Records</h1>
+        <a href="/medicalrecord/add">Add New Medical Record</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Name</th><th>Vet Check ID</th><th>Date</th><th>Action</th></tr>
+                <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><%= result[i].pet_name %></td>
+                <td><a href="/medicalrecord/?medicalrecord_id=<%= result[i].checkup_id %>"><%= result[i].checkup_id %></a></td>
+                <td><%= result[i].checkup_date %></td>
+                <td><form action="/medicalrecord/delete/">
+                        <input type="hidden" name="medicalrecord_id" id="medicalrecord_id" value="<%= result[i].medicalrecord_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

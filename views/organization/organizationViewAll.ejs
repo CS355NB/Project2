@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Organizations</title>
+    </head>
+    <body>
+        <h1>Organizations</h1>
+        <a href="/organization/add">Add New Organization</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Name</th><th>Address</th><th>Action</th></tr>
+                <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/organization/?organization_id=<%= result[i].organization_id %>"><%= result[i].organization_name %></a></td>
+                <td><%= result[i].organization_address %></td>
+                <td><form action="/organization/delete/">
+                        <input type="hidden" name="organization_id" id="organization_id" value="<%= result[i].organization_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Vet Check Ups - <%= result[0].checkup_id %></title>
+    </head>
+    <body>
+        <h1>Vet Check Ups</h1>
+        <ul>
+            <li>Pet ID: <%= result[0].pet_id%></li>
+            <li>Vet Check Up ID: <%= result[0].checkup_id%></li>
+            <li>Vet Check Up Date: <%= result[0].checkup_date %></li>
+            <li>Are The Pets Shots Up to Date?: <%= result[0].shots_uptodate %></li>
+            <li>Does the Pet Have Worms?: <%= result[0].worms%></li>
+            <li>Does the Pet Have Fleas?: <%= result[0].fleas%></li>
+            <li>Does the Pet Have Cancer?: <%= result[0].checkup_id%></li>
+            <li>Vet Check Up Description: <%= result[0].checkup_description%></li>
+        </ul>
+    </body>
+</html>

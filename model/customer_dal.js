@@ -14,7 +14,7 @@ exports.getAll = function(callback) {
 
 exports.getById = function(ssn, callback) {
     var query = 'SELECT * FROM Customer WHERE ssn = ?';
-    var queryData = [account_id];
+    var queryData = [ssn];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -34,9 +34,9 @@ exports.insert = function(params, callback) {
 
 }
 
-exports.delete = function(account_id, callback) {
+exports.delete = function(ssn, callback) {
     var query = 'DELETE FROM Customer WHERE ssn = ?';
-    var queryData = [account_id];
+    var queryData = [ssn];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
