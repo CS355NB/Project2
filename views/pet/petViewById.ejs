@@ -1,20 +1,29 @@
+<!--
 <html>
     <head>
-        <title>Pets - <%= result[0].pet_name %></title>
+        <title>Pets - <!%= result[0].pet_name %!></title>
     </head>
     <body>
-        <h1>Pets</h1>
+    -->
+<%- include("../includes/header.ejs", {title:"A Pet"}); %>
+        <h1>Our Cute Pet's Information</h1>
         <ul>
             <li>Pet ID: <%= result[0].pet_id%></li>
             <li>Pet Name: <%= result[0].pet_name %></li>
+            <br/>
             <li>Animal Type: <%= result[0].animal_type %></li>
-            <li>Age: <%= result[0].pet_age %></li>
+            <li>Age: <%= result[0].age %></li>
             <li>Gender: <%= result[0].gender %></li>
             <li>Description: <%= result[0].pet_description %></li>
-            <li>Organization ID: <%= result[0].organization_id %></li>
-            <li>Date Pet Was Brought In: <%= result[0].pet_name %></li>
-            <li>Adopted By: <%= result[0].ssn %></li>
+            <br/>
+            <li>Organization ID: <%= result[0].organization_name %></li>
+            <li>Date Pet Was Brought In: <%= result[0].broughtin_date %></li>
+            <br/>
+            <li>Adopted By: <%= result[0].customer_fname %> <%=result[0].customer_lname %></li>
             <li>Date Pet Was Adopted: <%= result[0].adopted_date %></li>
         </ul>
+<!--
     </body>
 </html>
+    -->
+<%- include("../includes/footer.ejs"); %>

@@ -1,9 +1,12 @@
+<!--
 <html>
     <head>
         <title>Medical Records</title>
     </head>
     <body>
-        <h1>Medical Records</h1>
+    -->
+<%- include("../includes/header.ejs", {title:"The Medical Records"}); %>
+        <h1>Our Cute Pet's Medical Records</h1>
         <a href="/medicalrecord/add">Add New Medical Record</a> <br />
 
         <br />
@@ -23,5 +26,8 @@
             </tr>
             <% } %>
         </table>
+<!--
     </body>
 </html>
+    -->
+<%- include("../includes/footer.ejs"); %>

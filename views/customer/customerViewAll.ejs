@@ -1,9 +1,12 @@
+<!--
 <html>
     <head>
         <title>Customers</title>
     </head>
     <body>
-        <h1>Customers</h1>
+    -->
+<%- include("../includes/header.ejs", {title:"Our Customers"}); %>
+        <h1>All Our Lovely Customers</h1>
         <a href="/customer/add">Add New Customer</a> <br />
 
         <br />
@@ -22,5 +25,8 @@
             </tr>
             <% } %>
         </table>
+<!--
     </body>
 </html>
+-->
+<%- include("../includes/footer.ejs"); %>

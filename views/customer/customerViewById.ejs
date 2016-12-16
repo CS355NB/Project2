@@ -1,14 +1,20 @@
+<!--
 <html>
     <head>
-        <title>Customers - <%= result[0].customer_fname %></title>
+        <title>Customers - <!%= result[0].customer_fname %!></title>
     </head>
     <body>
-        <h1>Customers</h1>
+    -->
+<%- include("../includes/header.ejs", {title:"A Customer"}); %>
+        <h1>Our lovely Customer's Information</h1>
         <ul>
             <li>First Name: <%= result[0].customer_fname %></li>
             <li>Last Name: <%= result[0].customer_lname %></li>
             <li>SSN: <%= result[0].ssn%></li>
             <li>Address: <%= result[0].customer_address %></li>
         </ul>
+<!--
     </body>
 </html>
+    -->
+<%- include("../includes/footer.ejs"); %>

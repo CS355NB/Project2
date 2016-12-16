@@ -1,9 +1,12 @@
+<!--
 <html>
     <head>
-        <title>Vet Check Ups - <%= result[0].checkup_id %></title>
+        <title>Vet Check Ups - <!%= result[0].checkup_id %!></title>
     </head>
     <body>
-        <h1>Vet Check Ups</h1>
+    -->
+<%- include("../includes/header.ejs", {title:"A Medical Records"}); %>
+        <h1>Our Cute Pet's Vet Check Up Information</h1>
         <ul>
             <li>Pet ID: <%= result[0].pet_id%></li>
             <li>Vet Check Up ID: <%= result[0].checkup_id%></li>
@@ -14,5 +17,8 @@
             <li>Does the Pet Have Cancer?: <%= result[0].checkup_id%></li>
             <li>Vet Check Up Description: <%= result[0].checkup_description%></li>
         </ul>
+<!--
     </body>
 </html>
+    -->
+<%- include("../includes/footer.ejs"); %>

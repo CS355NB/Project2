@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var customer = require('./routes/customer_routes');
-var medicalrecord = require('./medicalrecord_routes');
+var medicalrecord = require('./routes/medicalrecord_routes');
 var organization = require('./routes/organization_routes');
-var pet = require('./routes/pet');
+var pet = require('./routes/pet_routes');
 
 var app = express();
 

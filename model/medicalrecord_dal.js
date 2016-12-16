@@ -5,7 +5,7 @@ var db  = require('./db_connection.js');
 var connection = mysql.createConnection(db.config);
 
 exports.getAll = function(callback) {
-    var query = 'SELECT * FROM Vet_Check_Up;';
+    var query = 'SELECT * FROM VetCheckUp_View;';
 
     connection.query(query, function(err, result) {
         callback(err, result);
@@ -13,7 +13,7 @@ exports.getAll = function(callback) {
 };
 
 exports.getById = function(pet_id, checkup_id, callback) {
-    var query = 'SELECT * FROM Vet_Check_Up WHERE pet_id = ? AND checkup_id = ?';
+    var query = 'SELECT * FROM VetCheckUp_View WHERE pet_id = ? AND checkup_id = ?';
     var queryData = [pet_id, checkup_id];
 
     connection.query(query, queryData, function(err, result) {
