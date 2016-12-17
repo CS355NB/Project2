@@ -10,6 +10,7 @@ var customer = require('./routes/customer_routes');
 var medicalrecord = require('./routes/medicalrecord_routes');
 var organization = require('./routes/organization_routes');
 var pet = require('./routes/pet_routes');
+var about = require('./routes/about_routes');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(require('less-middleware')(path.join(__dirname, 'public'))); //added
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -30,6 +32,7 @@ app.use('/customer', customer);
 app.use('/medicalrecord', medicalrecord);
 app.use('/organization', organization);
 app.use('/pet', pet);
+app.use('/about', about);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

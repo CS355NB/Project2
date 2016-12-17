@@ -1,0 +1,30 @@
+<%- include("../includes/header.ejs", {title:"About"}); %>
+<head>
+    <title>About</title>
+    </head>
+<h1>About This Database</h1>
+
+<h2>An Overview</h2>
+<p>	The primary goal of this database is to keep track of the pets in the pet adoption organizations. We assume that an agency has a couple of different locations to keep track of.  And within their locations they have pets and customers to keep track of. This database will keep track of the rescued animals, their medical records, and the customers who adopt them.
+    Every pet adoption organization has its own name, address, and given id. Every organization has pets. Each pet is described by their name, given id, animal type, age, gender, a given pet description, the date they were brought in to the pet adoption organization, the id of the organization that they were brought into, the date of adoption, and the social security number of the person who adopted them. The organization also keeps track of the pet’s medical records. Each pet has at least one vet check up that needs to be recorded and saved in the database. The vet check up consists of the pet’s id, given check up id, whether they are up to date on shots, whether they have worms, whether, they have flees, whether they have cancer, the date of the check up, and a description of the check up results from the vet. The last thing that is included in the pet adoption database is the customer information. They keep track of the customer’s first name, last name, address, and social security number.
+    This database also contains queries, stored procedures, and functions that keep track of how many pets a person has adopted, how many pets an organization has, how many vet check ups a pet has, and more.
+
+    Note: Every organization has many pets, but each bet can only belong to one organization. Each pet can have many vet check ups, but each record belongs to one pet. A customer can adopt many pets, but each pet has only one owner.
+</p>
+<br/>
+<br/>
+<h2>ER Diagram</h2>
+<img src="/images/ERD.png" />
+<br/>
+<br/>
+
+<h2>Relationship Schema</h2>
+<img src="/images/RS.png" />
+<br/>
+<br/>
+
+<h3>If You have Any Questions:</h3>
+<p>phone: 1-800-857-4286</p>
+<p>email: ilovepets@ilovepets.com</p>
+
+<%- include("../includes/footer.ejs"); %>
