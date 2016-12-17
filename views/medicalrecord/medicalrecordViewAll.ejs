@@ -16,7 +16,7 @@
                 <% for(var i=0; result.length > i; i++ ) { %>
             <tr>
                 <td><%= result[i].pet_name %></td>
-                <td><a href="/medicalrecord/?medicalrecord_id=<%= result[i].checkup_id %>"><%= result[i].checkup_id %></a></td>
+                <td><a href="/medicalrecord/?checkup_id=<%= result[i].checkup_id + "&pet_id="+result[i].pet_id %>"><%= result[i].checkup_id %></a></td>
                 <td><%= result[i].checkup_date %></td>
                 <td><form action="/medicalrecord/delete/">
                         <input type="hidden" name="medicalrecord_id" id="medicalrecord_id" value="<%= result[i].medicalrecord_id %>" />
